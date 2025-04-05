@@ -1,4 +1,4 @@
 <items gfxroot="gfx/items/" version="1">
-    <active id="1" name="Bongington" gfx="big_red_button_item.png" description="That good shit." quality="3" maxcharges="4" chargetype="normal"/>
+    <active id="1" name="Bongington" gfx="bongington_item.png" description="That good shit." quality="3" maxcharges="4" chargetype="normal"/>
 
 </items>

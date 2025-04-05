@@ -1,0 +1,9 @@
+<Asset>
+  <Anm2>
+    <Info Name="BongSmokeEffect" FrameNum="1" Fps="15" Loop="1"/>
+    <Layer>
+      <Spritesheet Path="bong_smoke_effect.png"/>
+      <Frame X="0" Y="0" W="32" H="32" AnchorX="16" AnchorY="16"/>
+    </Layer>
+  </Anm2>
+</Asset>
