@@ -14,7 +14,7 @@ function mod:BongButtonUse(item, rng, player)
     local spawnPos = player.Position + direction:Resized(40)
 
     local mist = Isaac.Spawn(EntityType.ENTITY_EFFECT, EFFECT_VARIANT_MIST, 0, spawnPos, Vector(0, 0), player)
-    mist:GetSprite():Load("bong_smoke_effect.anm2", true)
+    mist:GetSprite():Load("resources/gfx/items/bong_smoke_effect.anm2", true)
     mist:GetSprite():Play("BongSmokeEffect", true)
 
     local data = mist:GetData()
