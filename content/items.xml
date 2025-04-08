@@ -1,4 +1,6 @@
 <items gfxroot="gfx/items/" version="1">
     <active id="1" name="Bongington" gfx="bongington_item.png" description="That good shit." quality="3" maxcharges="4" chargetype="normal"/>
+    <passive id="2" name="Cocaine" gfx="cocaine_item.png" description="HOLY SHIT IM ZOOMING." quality="2"/>
+    <passive id="3" name="Heroin" gfx="heroin_item.png" description="ughhhhh." quality="1"/>
 
 </items>

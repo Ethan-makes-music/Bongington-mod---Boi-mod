@@ -1,5 +1,7 @@
-local mod = RegisterMod("Bongington Mod", 1)
+local mod = RegisterMod("The Drug Mod", 1)
 local bongington = Isaac.GetItemIdByName("Bongington")
+local cocaine = Isaac.GetItemIdByName("Cocaine")
+local heroin = Isaac.GetItemIdByName("Heroin")
 
 local EFFECT_VARIANT_MIST = 9876
 local mistDuration = 150
@@ -48,5 +50,30 @@ function mod:UpdateMist(effect)
     end
 end
 
+function mod:onCache(player, cacheFlag)
+    if cacheFlag == CacheFlag.CACHE_SPEED then
+        if player:HasCollectible(cocaine) then
+            player.MoveSpeed = player.MoveSpeed * 2
+        elseif player:HasCollectible(heroin) then
+            player.MoveSpeed = player.MoveSpeed * 0.5
+        end
+    end
+end
+
+function mod:onPlayerUpdate(player)
+    if player:HasCollectible(cocaine) and not mod.speedGiven then
+        mod.speedGiven = true
+        player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+        player:EvaluateItems()
+    end
+    if player:HasCollectible(heroin) and not mod.speedGiven then
+        mod.speedGiven = true
+        player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+        player:EvaluateItems()
+    end
+end
+
+mod:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, mod.onCache)
+mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, mod.onPlayerUpdate)
 mod:AddCallback(ModCallbacks.MC_USE_ITEM, mod.BongButtonUse, bongington)
 mod:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, mod.UpdateMist, EFFECT_VARIANT_MIST)
